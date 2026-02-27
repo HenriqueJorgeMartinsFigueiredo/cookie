@@ -61,14 +61,26 @@ function updateDisplay() {
     // Animate cookie count
     cookieCountEl.textContent = Math.floor(state.cookies).toLocaleString();
     cpsDisplayEl.textContent = `${state.cps.toFixed(1)} CPS`;
-    
-    // Update shop buttons availability
-    const shopItems = document.querySelectorAll('.shop-item');
+
+    // Update shop buttons availability - only target items in the shop container
+    const shopItems = shopContainer.querySelectorAll('.shop-item');
     shopItems.forEach((itemEl, index) => {
         const item = state.items[index];
-        if (state.cookies < item.cost) {
+        if (item && state.cookies < item.cost) {
             itemEl.classList.add('locked');
-        } else {
+        } else if (item) {
+            itemEl.classList.remove('locked');
+        }
+    });
+
+    // Update upgrades availability
+    const upgradeItems = upgradesContainer.querySelectorAll('.shop-item');
+    upgradeItems.forEach((itemEl, index) => {
+        const availableUpgrades = state.upgrades.filter(u => !u.owned);
+        const upgrade = availableUpgrades[index];
+        if (upgrade && state.cookies < upgrade.cost) {
+            itemEl.classList.add('locked');
+        } else if (upgrade) {
             itemEl.classList.remove('locked');
         }
     });
@@ -99,7 +111,7 @@ function renderUpgrades() {
     upgradesContainer.innerHTML = '';
     state.upgrades.forEach((upgrade, index) => {
         if (upgrade.owned) return;
-        
+
         const upgradeEl = document.createElement('div');
         upgradeEl.className = 'shop-item'; // Reuse same styles
         upgradeEl.innerHTML = `
@@ -180,9 +192,9 @@ function createParticle(x, y, text) {
     particle.textContent = text;
     particle.style.left = `${x}px`;
     particle.style.top = `${y}px`;
-    
+
     particleContainer.appendChild(particle);
-    
+
     setTimeout(() => {
         particle.remove();
     }, 800);
@@ -193,7 +205,7 @@ function showToast(message, type = 'success') {
     toast.className = `toast ${type}`;
     toast.textContent = message;
     document.getElementById('toast-container').appendChild(toast);
-    
+
     setTimeout(() => {
         toast.style.opacity = '0';
         setTimeout(() => toast.remove(), 300);

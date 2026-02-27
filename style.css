@@ -171,6 +171,10 @@ main {
     height: 300px;
     object-fit: contain;
     filter: drop-shadow(0 0 20px rgba(0, 0, 0, 0.5));
+    mix-blend-mode: screen;
+    /* Works well for light objects on dark backgrounds */
+    pointer-events: none;
+    /* Let the button handle the click */
 }
 
 .score-display {
