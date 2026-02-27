@@ -38,12 +38,20 @@ function init() {
 }
 
 function setupEventListeners() {
-    mainCookieBtn.addEventListener('click', (e) => {
-        state.cookies += 1;
-        state.totalCookies += 1;
-        createParticle(e.clientX, e.clientY, '+1');
-        updateDisplay();
-        saveGame();
+    mainCookieBtn.addEventListener('mousedown', (e) => {
+        // Button 0 is the left mouse button
+        if (e.button === 0) {
+            state.cookies += 1;
+            state.totalCookies += 1;
+            createParticle(e.clientX, e.clientY, '+1');
+            updateDisplay();
+            saveGame();
+        }
+    });
+
+    // Prevent context menu (right click) on the cookie to keep it clean
+    mainCookieBtn.addEventListener('contextmenu', (e) => {
+        e.preventDefault();
     });
 
     tabBtns.forEach(btn => {
