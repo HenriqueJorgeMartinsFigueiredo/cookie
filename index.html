@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cookie Universe | The Ultimate Clicking Experience</title>
+    <meta name="description" content="Embark on a delicious journey in Cookie Universe. Click your way to galactic cookie dominance!">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Space+Grotesk:wght@300;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="app">
+        <div class="background-glow"></div>
+        <div class="stars-overlay"></div>
+        
+        <header>
+            <div class="logo">
+                <span class="logo-icon">🍪</span>
+                <h1>COOKIE<span>UNIVERSE</span></h1>
+            </div>
+            <div class="stats-bar">
+                <div class="stat-item">
+                    <span class="label">Production</span>
+                    <span id="cps-display" class="value">0 CPS</span>
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <section class="game-area">
+                <div class="cookie-container">
+                    <div id="cookie-glow"></div>
+                    <button id="main-cookie" aria-label="Click the cookie">
+                        <img src="public/cookie-primary.png" alt="Grand Cookie" id="cookie-image">
+                    </button>
+                    <div id="particle-container"></div>
+                </div>
+                
+                <div class="score-display">
+                    <h2 id="cookie-count">0</h2>
+                    <p>Cookies</p>
+                </div>
+            </section>
+
+            <aside class="sidebar">
+                <div class="tabs">
+                    <button class="tab-btn active" data-tab="shop">Shop</button>
+                    <button class="tab-btn" data-tab="upgrades">Upgrades</button>
+                </div>
+
+                <div class="tab-content" id="shop-tab">
+                    <div id="shop-items" class="scroll-container">
+                        <!-- Items will be injected here -->
+                    </div>
+                </div>
+
+                <div class="tab-content hidden" id="upgrades-tab">
+                    <div id="upgrades-items" class="scroll-container">
+                        <!-- Upgrades will be injected here -->
+                    </div>
+                </div>
+            </aside>
+        </main>
+
+        <div id="toast-container"></div>
+    </div>
+
+    <script type="module" src="main.js"></script>
+</body>
+</html>
