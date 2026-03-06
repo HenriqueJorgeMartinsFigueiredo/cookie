@@ -203,8 +203,8 @@ main {
     height: 300px;
     object-fit: contain;
     filter: drop-shadow(0 0 20px rgba(0, 0, 0, 0.5));
-    mix-blend-mode: normal;
-    /* Back to normal for full visibility */
+    mix-blend-mode: multiply;
+    /* Clean up white backgrounds */
     pointer-events: none;
     /* Let the button handle the click */
 }
