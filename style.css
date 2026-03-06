@@ -203,8 +203,10 @@ main {
     height: 300px;
     object-fit: contain;
     filter: drop-shadow(0 0 20px rgba(0, 0, 0, 0.5));
-    mix-blend-mode: normal;
-    border-radius: 50%;
+    mix-blend-mode: multiply;
+    /* Mathematically eliminates white backgrounds on dark themes */
+    clip-path: circle(48%);
+    /* Crops any remaining white border pixels */
     /* Ensuring a clean circular look */
     pointer-events: none;
     /* Let the button handle the click */
