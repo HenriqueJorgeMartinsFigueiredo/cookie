@@ -205,8 +205,8 @@ main {
     filter: drop-shadow(0 0 20px rgba(0, 0, 0, 0.5));
     mix-blend-mode: multiply;
     /* Mathematically eliminates white backgrounds on dark themes */
-    clip-path: circle(48%);
-    /* Crops any remaining white border pixels */
+    clip-path: circle(45%);
+    /* Cropping more of the edges to remove any leftover white pixels */
     /* Ensuring a clean circular look */
     pointer-events: none;
     /* Let the button handle the click */
