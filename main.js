@@ -63,6 +63,18 @@ function setupEventListeners() {
             document.getElementById(`${target}-tab`).classList.remove('hidden');
         });
     });
+
+    const resetBtn = document.getElementById('reset-game');
+    resetBtn.addEventListener('click', () => {
+        if (confirm('Are you sure you want to reset all your progress? This cannot be undone.')) {
+            resetGame();
+        }
+    });
+}
+
+function resetGame() {
+    localStorage.removeItem('cookieUniverseSave');
+    location.reload(); // Simplest way to reset everything to initial state
 }
 
 function updateDisplay() {

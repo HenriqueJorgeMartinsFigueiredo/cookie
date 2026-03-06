@@ -95,6 +95,12 @@ header {
     font-weight: 300;
 }
 
+.stats-bar {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
 .stats-bar .stat-item {
     background: var(--glass-bg);
     border: 1px solid var(--glass-border);
@@ -113,6 +119,32 @@ header {
 .stat-item .value {
     color: var(--accent);
     font-weight: 600;
+}
+
+.reset-btn {
+    background: rgba(255, 107, 107, 0.1);
+    border: 1px solid rgba(255, 107, 107, 0.2);
+    padding: 0.5rem 1.25rem;
+    border-radius: 100px;
+    color: #ff6b6b;
+    font-family: var(--font-body);
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+    margin-left: 1rem;
+}
+
+.reset-btn:hover {
+    background: rgba(255, 107, 107, 0.2);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255, 107, 107, 0.2);
+}
+
+.reset-btn:active {
+    transform: scale(0.95);
 }
 
 /* Main Layout */
