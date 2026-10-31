@@ -19,7 +19,7 @@ Jogo incremental (clicker) feito com JavaScript puro e Vite. Clique no cookie, c
 
 - HTML5, CSS3 (glassmorphism, animações) e JavaScript (ES Modules)
 - [Vite](https://vitejs.dev/) para desenvolvimento e build
-- GitHub Actions + GitHub Pages para publicar
+- GitHub Pages para publicar
 
 ## Como rodar
 
@@ -40,7 +40,6 @@ npm run build    # gera a versão final em dist/
 | `index.html` | Estrutura da tela |
 | `style.css` | Visual, animações e layout responsivo |
 | `main.js` | Estado do jogo, loja, melhorias, loop de produção e salvamento |
-| `.github/workflows/deploy.yml` | Build e publicação automática no GitHub Pages |
 
 ## Próximos passos
 
